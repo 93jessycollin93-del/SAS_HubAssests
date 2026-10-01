@@ -1860,6 +1860,9 @@
           "path": "registry/new-york/text/animate-text/custom.tsx",
           "target": "components/pixel-perfect/custom.tsx"
         }
+      ],
+      "registryDependencies": [
+        "https://www.pixel-perfect.space/r/engine.json"
       ]
     },
     {
@@ -1876,6 +1879,9 @@
           "path": "registry/new-york/text/animate-text/engine.tsx",
           "target": "components/pixel-perfect/engine.tsx"
         }
+      ],
+      "registryDependencies": [
+        "https://www.pixel-perfect.space/r/effects.json"
       ]
     },
     {
@@ -1889,6 +1895,9 @@
           "path": "registry/new-york/text/animate-text/specs.ts",
           "target": "components/pixel-perfect/specs.ts"
         }
+      ],
+      "registryDependencies": [
+        "https://www.pixel-perfect.space/r/engine.json"
       ]
     },
     {
@@ -3583,8 +3592,8 @@
         }
       ],
       "registryDependencies": [
-        "https://www.pixel-perfect.space/r/shader-canvas.json",
-        "https://www.pixel-perfect.space/r/animated-texture.json"
+        "https://www.pixel-perfect.space/r/animated-texture.json",
+        "https://www.pixel-perfect.space/r/shader-canvas.json"
       ]
     },
     {
@@ -4564,6 +4573,218 @@
           "mask-image": "linear-gradient(to bottom, #000 calc(100% - 1.75rem), transparent)"
         }
       }
+    },
+    {
+      "name": "attachment",
+      "description": "File attachment chips and an add-attachment button for an assistant-ui composer and user messages.",
+      "type": "registry:block",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react",
+        "zustand"
+      ],
+      "registryDependencies": [
+        "avatar",
+        "dialog",
+        "https://www.pixel-perfect.space/r/tooltip-icon-button.json",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/attachment.tsx",
+          "target": "components/pixel-perfect/attachment.tsx"
+        }
+      ]
+    },
+    {
+      "name": "markdown-text",
+      "description": "GFM markdown renderer for assistant-ui messages, with code blocks that show the language and a copy button.",
+      "type": "registry:block",
+      "dependencies": [
+        "@assistant-ui/react-markdown",
+        "lucide-react",
+        "remark-gfm"
+      ],
+      "registryDependencies": [
+        "https://www.pixel-perfect.space/r/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/markdown-text.tsx",
+          "target": "components/pixel-perfect/markdown-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "reasoning",
+      "description": "Collapsible reasoning trace for assistant-ui — shows the model's thinking with a live preview while it streams.",
+      "type": "registry:block",
+      "dependencies": [
+        "@assistant-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "https://www.pixel-perfect.space/r/markdown-text.json"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/reasoning.tsx",
+          "target": "components/pixel-perfect/reasoning.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thinking-indicator",
+      "description": "Agent thinking indicator — a dot-matrix loader beside a shimmering Connecting → Thinking → Generating label.",
+      "type": "registry:block",
+      "dependencies": [],
+      "registryDependencies": [
+        "@dotmatrix/dotm-square-11"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/thinking-indicator.tsx",
+          "target": "components/pixel-perfect/thinking-indicator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "thread",
+      "description": "A complete assistant-ui chat thread: welcome screen, composer with attachments, markdown messages, reasoning, grouped tool calls and an action bar.",
+      "type": "registry:block",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "https://www.pixel-perfect.space/r/attachment.json",
+        "https://www.pixel-perfect.space/r/markdown-text.json",
+        "https://www.pixel-perfect.space/r/reasoning.json",
+        "https://www.pixel-perfect.space/r/thinking-indicator.json",
+        "https://www.pixel-perfect.space/r/tool-fallback.json",
+        "https://www.pixel-perfect.space/r/tool-group.json",
+        "https://www.pixel-perfect.space/r/tooltip-icon-button.json"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/thread.tsx",
+          "target": "components/pixel-perfect/thread.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-fallback",
+      "description": "Tool-call card for assistant-ui with running/complete/failed/needs-action states, an elapsed timer, and Approve/Deny buttons for human-in-the-loop approval.",
+      "type": "registry:block",
+      "dependencies": [
+        "@assistant-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "collapsible"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/tool-fallback.tsx",
+          "target": "components/pixel-perfect/tool-fallback.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tool-group",
+      "description": "Collapsible group that folds consecutive assistant-ui tool calls into one row with a running spinner.",
+      "type": "registry:block",
+      "dependencies": [
+        "@assistant-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/tool-group.tsx",
+          "target": "components/pixel-perfect/tool-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip-icon-button",
+      "description": "Icon button with a tooltip, used by the assistant-ui action bar and composer.",
+      "type": "registry:block",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "button",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/assistant-ui/tooltip-icon-button.tsx",
+          "target": "components/pixel-perfect/tooltip-icon-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dot-spinner-matrix",
+      "description": "Dot-matrix loading spinner with 26 animated patterns (perimeter, rings, sweep, spiral, scanline, matrix rain…), 12 glow colours, and adjustable size, speed and trail.",
+      "type": "registry:block",
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/loaders/dot-spinner-matrix.tsx",
+          "target": "components/pixel-perfect/dot-spinner-matrix.tsx"
+        }
+      ]
+    },
+    {
+      "name": "voice-recorder",
+      "description": "Voice recorder — a quick-add sheet whose mic sticker springs open a recorder drawer with a live microphone waveform, rolling-digit timer, and stop / record / delete controls.",
+      "type": "registry:block",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/motion-framer/voice-recorder.tsx",
+          "target": "components/pixel-perfect/voice-recorder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "agent-console-sidebar",
+      "description": "Agent console sidebar — Build / Monitor sections for personas, scenarios, knowledge bases, batch calls, conversations and quality, with an icon-rail collapse, scroll-velocity blur and a theme switcher.",
+      "type": "registry:block",
+      "dependencies": [
+        "@hugeicons/core-free-icons",
+        "@hugeicons/react",
+        "motion",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "type": "registry:component",
+          "path": "registry/new-york/sidebars/agent-console-sidebar.tsx",
+          "target": "components/pixel-perfect/agent-console-sidebar.tsx"
+        }
+      ]
     }
   ]
 }

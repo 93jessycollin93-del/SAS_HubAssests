@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowUp, Bot } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { ThinkingIndicator } from "@/components/assistant-ui/thinking-indicator";
+import { ThinkingIndicator } from "../../../registry/new-york/assistant-ui/thinking-indicator";
 import {
   MessageScroller,
   MessageScrollerButton,

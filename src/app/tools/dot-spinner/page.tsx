@@ -5,7 +5,7 @@ import { useState } from "react";
 import DotSpinnerMatrix, {
   SPINNER_VARIANTS,
   type SpinnerVariantKey,
-} from "@/components/mine/do-not-share/dot-spinner-matrix";
+} from "../../../../registry/new-york/loaders/dot-spinner-matrix";
 import { COLORS, colorSwatch } from "../colors";
 
 const PER_PAGE = 6;

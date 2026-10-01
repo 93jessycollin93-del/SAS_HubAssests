@@ -6,6 +6,9 @@
     "@gsap/react",
     "gsap"
   ],
+  "registryDependencies": [
+    "https://www.pixel-perfect.space/r/effects.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/text/animate-text/engine.tsx",

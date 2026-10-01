@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * File attachment chips and an add-attachment button for an assistant-ui composer and user messages.
+ */
+
 import { type PropsWithChildren, useEffect, useState, type FC } from "react";
 import { XIcon, PlusIcon, FileText } from "lucide-react";
 import {
@@ -22,7 +26,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
+import { TooltipIconButton } from "./tooltip-icon-button";
 import { cn } from "@/lib/utils";
 
 const useFileSrc = (file: File | undefined) => {

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "thinking-indicator",
+  "description": "Agent thinking indicator — a dot-matrix loader beside a shimmering Connecting → Thinking → Generating label.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@dotmatrix/dotm-square-11"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/assistant-ui/thinking-indicator.tsx",
+      "content": "\"use client\";\n\n/**\n * Agent thinking indicator — a dot-matrix loader beside a shimmering Connecting → Thinking → Generating label.\n */\n\nimport { useEffect, useState } from \"react\";\n\nimport { DotmSquare11 } from \"@/components/ui/dotm-square-11\";\n\n/* Thinking indicator — shown in place of assistant-ui's default running \"●\"\n * while the assistant is working but hasn't streamed any output yet.\n *\n * The official @dotmatrix DotmSquare11 loader (inherits currentColor, so it\n * follows the theme) sits next to a shimmering status label that advances\n * Connecting → Thinking → Generating. */\n\nconst STATUSES = [\"Connecting\", \"Thinking\", \"Generating\"];\n\nexport function ThinkingIndicator() {\n  const [step, setStep] = useState(0);\n\n  // Advance the label like real progress; hold on the last status.\n  useEffect(() => {\n    const t = setInterval(\n      () => setStep((n) => Math.min(n + 1, STATUSES.length - 1)),\n      1300,\n    );\n    return () => clearInterval(t);\n  }, []);\n\n  return (\n    <div\n      data-slot=\"aui_assistant-message-indicator\"\n      className=\"flex items-center gap-3 py-1\"\n      aria-label=\"Assistant is thinking\"\n    >\n      <DotmSquare11 size={20} dotSize={2.8} className=\"shrink-0\" />\n      <span className=\"shimmer text-muted-foreground text-sm font-normal\">\n        {STATUSES[step]}\n      </span>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/pixel-perfect/thinking-indicator.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

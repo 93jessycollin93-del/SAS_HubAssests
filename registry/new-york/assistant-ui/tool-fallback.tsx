@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Tool-call card for assistant-ui with running/complete/failed/needs-action states, an elapsed timer, and Approve/Deny buttons for human-in-the-loop approval.
+ */
+
 import { memo, useCallback, useRef, useState } from "react";
 import {
   AlertCircleIcon,

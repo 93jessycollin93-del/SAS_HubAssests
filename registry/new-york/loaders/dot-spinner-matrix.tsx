@@ -1,8 +1,12 @@
 "use client";
 
+/**
+ * Dot-matrix loading spinner with 26 animated patterns (perimeter, rings, sweep, spiral, scanline, matrix rain…), 12 glow colours, and adjustable size, speed and trail.
+ */
+
 import { useEffect, useRef, useState } from "react";
 
-type ColorKey =
+export type ColorKey =
   | "cyan"
   | "magenta"
   | "yellow"
@@ -277,7 +281,7 @@ const buildFrame = (
     }
     case "scanline-bounce": {
       const period = Math.max(2, 2 * (N - 1));
-      let p = ((step % period) + period) % period;
+      const p = ((step % period) + period) % period;
       const row = p < N ? p : period - p;
       for (let c = 0; c < N; c++) set(row, c, 1);
       return f;
@@ -418,6 +422,8 @@ export default function DotSpinnerMatrix({
 
   return (
     <div
+      role="status"
+      aria-label="Loading"
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(${size}, ${dotSize}px)`,

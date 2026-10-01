@@ -12,6 +12,7 @@ const COMPONENTS_DIR = path.join(ROOT, "registry/new-york");
 const TARGET_DIR = "components/pixel-perfect";
 
 const BUILTIN_DEPS = new Set(["react", "react-dom", "next"]);
+const REGISTRY_URL = "https://www.pixel-perfect.space/r";
 
 // Map a local `@/components/ui/<name>` import to the external registry id it
 // must resolve to in a consumer project (when the component was itself added
@@ -61,6 +62,13 @@ function classifyDeps(imports) {
   const npm = new Set();
   const registry = new Set();
   for (const spec of imports) {
+    // Same-folder imports ("./engine") stay relative after install because
+    // every item lands flat in TARGET_DIR, so they become registry deps.
+    const sibling = spec.match(/^\.\/([\w-]+)$/);
+    if (sibling) {
+      registry.add(`${REGISTRY_URL}/${sibling[1]}.json`);
+      continue;
+    }
     if (spec.startsWith(".") || spec.startsWith("registry/")) continue;
     if (spec.startsWith("@/components/ui/")) {
       const ui = spec.replace("@/components/ui/", "").split("/")[0];

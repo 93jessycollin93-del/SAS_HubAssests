@@ -7,8 +7,8 @@
     "three"
   ],
   "registryDependencies": [
-    "https://www.pixel-perfect.space/r/shader-canvas.json",
-    "https://www.pixel-perfect.space/r/animated-texture.json"
+    "https://www.pixel-perfect.space/r/animated-texture.json",
+    "https://www.pixel-perfect.space/r/shader-canvas.json"
   ],
   "files": [
     {

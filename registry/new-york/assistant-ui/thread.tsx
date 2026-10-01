@@ -1,26 +1,30 @@
 "use client";
 
+/**
+ * A complete assistant-ui chat thread: welcome screen, composer with attachments, markdown messages, reasoning, grouped tool calls and an action bar.
+ */
+
 import {
   ComposerAddAttachment,
   ComposerAttachments,
   UserMessageAttachments,
-} from "@/components/assistant-ui/attachment";
-import { MarkdownText } from "@/components/assistant-ui/markdown-text";
+} from "./attachment";
+import { MarkdownText } from "./markdown-text";
 import {
   Reasoning,
   ReasoningContent,
   ReasoningRoot,
   ReasoningText,
   ReasoningTrigger,
-} from "@/components/assistant-ui/reasoning";
-import { ToolFallback } from "@/components/assistant-ui/tool-fallback";
+} from "./reasoning";
+import { ToolFallback } from "./tool-fallback";
 import {
   ToolGroupContent,
   ToolGroupRoot,
   ToolGroupTrigger,
-} from "@/components/assistant-ui/tool-group";
-import { ThinkingIndicator } from "@/components/assistant-ui/thinking-indicator";
-import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
+} from "./tool-group";
+import { ThinkingIndicator } from "./thinking-indicator";
+import { TooltipIconButton } from "./tooltip-icon-button";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {

@@ -16,6 +16,7 @@ import TextEditorItalic from "registry/new-york/motion-framer/text-editor-italic
 import ActivityWheelMotion from "registry/new-york/motion-framer/activity-wheel-motion";
 import CarLockDriveMotion from "registry/new-york/motion-framer/car-lock-drive-motion";
 import DialKnobMotion from "registry/new-york/motion-framer/dial-knob-motion";
+import VoiceRecorder from "registry/new-york/motion-framer/voice-recorder";
 import CopyDropdown from "../copy-dropdown";
 
 const MotionComponentArr: {
@@ -106,6 +107,13 @@ const MotionComponentArr: {
     description: "3D spinning coin with layered faces and side profile.",
     Component: CoinSpinAnimation,
     registryName: "coin-spin-animation",
+  },
+  {
+    name: "Voice Recorder",
+    description:
+      "Quick-add sheet that springs open a recorder with a live mic waveform and rolling timer.",
+    Component: VoiceRecorder,
+    registryName: "voice-recorder",
   },
 ];
 

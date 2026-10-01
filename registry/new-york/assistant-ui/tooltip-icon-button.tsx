@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Icon button with a tooltip, used by the assistant-ui action bar and composer.
+ */
+
 import { type ComponentPropsWithRef, forwardRef } from "react";
 import { Slot } from "radix-ui";
 

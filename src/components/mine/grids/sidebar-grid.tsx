@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ClaudeSidebar from "../../../../registry/new-york/sidebars/claude-sidebar";
+import AgentConsoleSidebar from "../../../../registry/new-york/sidebars/agent-console-sidebar";
 import CopyDropdown from "../copy-dropdown";
 
 const SidebarsArr = [
@@ -11,6 +12,13 @@ const SidebarsArr = [
       "Warm cream sidebar with smooth collapse animation, playful icon micro-interactions, starred & recent chat lists, and user card.",
     component: <ClaudeSidebar />,
     registryName: "claude-sidebar",
+  },
+  {
+    name: "Agent Console Sidebar",
+    description:
+      "Agent platform nav with Build and Monitor sections, icon-rail collapse, scroll-velocity blur and a theme switcher.",
+    component: <AgentConsoleSidebar className="h-[560px]" />,
+    registryName: "agent-console-sidebar",
   },
 ];
 

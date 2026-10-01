@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Collapsible group that folds consecutive assistant-ui tool calls into one row with a running spinner.
+ */
+
 import {
   memo,
   useCallback,

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Agent thinking indicator — a dot-matrix loader beside a shimmering Connecting → Thinking → Generating label.
+ */
+
 import { useEffect, useState } from "react";
 
 import { DotmSquare11 } from "@/components/ui/dotm-square-11";

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Collapsible reasoning trace for assistant-ui — shows the model's thinking with a live preview while it streams.
+ */
+
 import {
   createContext,
   memo,
@@ -18,7 +22,7 @@ import {
   type ReasoningMessagePartComponent,
   type ReasoningGroupComponent,
 } from "@assistant-ui/react";
-import { MarkdownText } from "@/components/assistant-ui/markdown-text";
+import { MarkdownText } from "./markdown-text";
 import {
   Collapsible,
   CollapsibleContent,

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * GFM markdown renderer for assistant-ui messages, with code blocks that show the language and a copy button.
+ */
+
 import "@assistant-ui/react-markdown/styles/dot.css";
 
 import {
@@ -12,7 +16,7 @@ import remarkGfm from "remark-gfm";
 import { type FC, memo, useState } from "react";
 import { CheckIcon, CopyIcon } from "lucide-react";
 
-import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
+import { TooltipIconButton } from "./tooltip-icon-button";
 import { cn } from "@/lib/utils";
 
 const MarkdownTextImpl = () => {
